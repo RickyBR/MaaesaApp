@@ -11,6 +11,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.maesaapp.ApiService.ApiClient;
+
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,21 +44,35 @@ public class ValidateEmail extends AppCompatActivity {
             public void onClick(View v) {
                 if(TextUtils.isEmpty(et_validate_email.getText().toString())){
                     String message = "all is required..";
-                    Toast.makeText(com.example.maesaapp.ValidateEmail.this,message, Toast.LENGTH_LONG).show();
+                    Toast.makeText(ValidateEmail.this,message, Toast.LENGTH_LONG).show();
                 }else{
-                   ValidateEmailRequest validateEmailRequest = new ValidateEmailRequest();
-                   validateEmailRequest.setEmail(et_emaill.getText().toString());
-                   validateEmailRequest.setRemember_token(et_validate_email.getText().toString());
+                    ValidateEmailRequest validateEmailRequest = new ValidateEmailRequest();
+
+                    validateEmailRequest.setRemember_token(et_validate_email.getText().toString());
 
                     validateEmailSubmit(validateEmailRequest);
 
+                    Call<List<ValidateEmailResponse>> validateEmail = ApiClient.getService().getValidateEmail();
+                    validateEmail.enqueue(new Callback<List<ValidateEmailResponse>>() {
+                        @Override
+                        public void onResponse(Call<List<ValidateEmailResponse>> call, Response<List<ValidateEmailResponse>> response) {
+                            if(response.isSuccessful()){
+                                Log.e("Success",response.body().toString());
+                            }
+                        }
 
+                        @Override
+                        public void onFailure(Call<List<ValidateEmailResponse>> call, Throwable t) {
+                            Log.e("Failure",t.getLocalizedMessage());
+                        }
+                    });
                 }
 
             }
         });
 
     }
+
 
 
     public void validateEmailSubmit(ValidateEmailRequest validateEmailRequest){

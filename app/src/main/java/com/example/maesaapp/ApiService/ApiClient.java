@@ -1,4 +1,6 @@
-package com.example.maesaapp;
+package com.example.maesaapp.ApiService;
+
+import com.example.maesaapp.UserService;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -21,7 +23,7 @@ public class ApiClient {
                 .build();
         return retrofit;
     }
-    public static  UserService getService(){
+    public static UserService getService(){
         UserService userService = getRetrofit().create(UserService.class);
 
         return userService;
