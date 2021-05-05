@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
 
                     LoginResponse loginResponse = response.body();
-                    startActivity(new Intent(com.example.maesaapp.LoginActivity.this, MainActivity.class).putExtra("data",loginResponse));
+                    startActivity(new Intent(com.example.maesaapp.LoginActivity.this, AddCardActivity.class).putExtra("data",loginResponse));
                     finish();
                 }else {
                     String message = "An error occured please try again later..";

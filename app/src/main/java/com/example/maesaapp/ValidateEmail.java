@@ -83,7 +83,7 @@ public class ValidateEmail extends AppCompatActivity {
                 if(response.isSuccessful()){
 
                     com.example.maesaapp.ValidateEmailResponse validateEmailResponse = response.body();
-                    startActivity(new Intent(com.example.maesaapp.ValidateEmail.this, com.example.maesaapp.MainActivity.class));
+                    startActivity(new Intent(com.example.maesaapp.ValidateEmail.this, HomeActivity.class));
                     finish();
                 }else {
                     String message = "An error occured please try again later..";
@@ -93,7 +93,7 @@ public class ValidateEmail extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<com.example.maesaapp.ValidateEmailResponse> call, Throwable t) {
-                String message = "An error occured please try again laterrrrr..";
+                String message = "An error occured please try again later..";
                 Toast.makeText(com.example.maesaapp.ValidateEmail.this,message,Toast.LENGTH_LONG).show();
             }
         });

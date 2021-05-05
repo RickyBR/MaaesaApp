@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MaesaApp</string>
+    <string name="forgot_pass">Lupa Password?</string>
 </resources>
