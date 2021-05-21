@@ -27,19 +27,6 @@ public class AddCardActivity extends AppCompatActivity {
             Log.e("TAG", "=====>" +loginResponse.getEmail());
         }
 
-        Call<List<AddCardResponse>> addCard = ApiClient.getService().getAddCard();
-        addCard.enqueue(new Callback<List<AddCardResponse>>() {
-            @Override
-            public void onResponse(Call<List<AddCardResponse>> call, Response<List<AddCardResponse>> response) {
-                if(response.isSuccessful()){
-                    Log.e("Success",response.body().toString());
-                }
-            }
 
-            @Override
-            public void onFailure(Call<List<AddCardResponse>> call, Throwable t) {
-                Log.e("Failure",t.getLocalizedMessage());
-            }
-        });
     }
 }

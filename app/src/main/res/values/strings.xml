@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MaesaApp</string>
     <string name="forgot_pass">Lupa Password?</string>
+    <string name="resend_code"><u>Kirim ulang kode</u></string>
 </resources>

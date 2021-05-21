@@ -29,7 +29,7 @@ public class ValidateEmail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_validate_email);
         et_validate_email = findViewById(R.id.et_validate_email);
-        et_emaill = findViewById(R.id.et_emaill);
+
 
         btn_submit = findViewById(R.id.btn_submit);
         Intent intent= getIntent();
