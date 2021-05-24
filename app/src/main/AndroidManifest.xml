@@ -11,21 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaesaApp">
-        <activity android:name=".GetStartedActivity"></activity>
-        <activity android:name=".SplashScreenActivity" />
-        <activity android:name=".AddCardActivity">
+        <activity android:name=".GetStartedActivity">
 
         </activity>
-        <activity android:name=".ValidateEmail">
-
-        </activity>
-        <activity android:name=".HomeActivity" >
+        <activity android:name=".SplashScreenActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddCardActivity">
+
+        </activity>
+        <activity android:name=".ValidateEmail"/>
+
+
+        <activity android:name=".HomeActivity" >
+
+        </activity>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".RegisterActivity"/>
+
     </application>
 
 </manifest>

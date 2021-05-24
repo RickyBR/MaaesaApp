@@ -33,7 +33,8 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         et_email = findViewById(R.id.et_email);
         et_pass = findViewById(R.id.et_pass);
-        et_cpass = findViewById(R.id.et_pass);
+        et_cpass = findViewById(R.id.et_cpass);
+        tv_login = findViewById(R.id.tv_loginn);
 
         btn_submit = findViewById(R.id.btn_submit);
 
